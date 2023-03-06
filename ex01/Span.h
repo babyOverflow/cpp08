@@ -9,7 +9,7 @@ public:
 	~Span();
 
 	typedef std::vector<int>::iterator iterator;
-	typedef std::vector<int>::iterator const_iterator;
+	typedef std::vector<int>::const_iterator const_iterator;
 
 	void addNumber(int number);
 	int shortestSpan() const;

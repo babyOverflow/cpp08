@@ -1,4 +1,5 @@
 #include <exception>
+#include <iterator>
 #include <stdexcept>
 #include <algorithm>
 #include <limits>
@@ -39,6 +40,7 @@ int Span::shortestSpan() const
 {
 	if (mNumbers.size() < 2)
 		throw std::out_of_range("Span");
+
 	std::vector<int> tmp(mNumbers);
 	std::sort(tmp.begin(), tmp.end());
 	
@@ -48,15 +50,15 @@ int Span::shortestSpan() const
 	{
 		int a = *it;
 		int b = *(++it);
-		if (a - b < diff)
-			diff = a - b;
+		if (std::abs(b - a) < diff)
+			diff = std::abs(b - a);
 	}
 	return diff;
 }
 
 int Span::longestSpan() const
 {
-	std::vector<const int>::iterator itmax = std::max_element(mNumbers.begin(), mNumbers.end());
-	std::vector<const int>::iterator itmin = std::max_element(mNumbers.begin(), mNumbers.end());
-	return (*itmax - *itmin);
+	return (
+		*std::max_element(mNumbers.begin(), mNumbers.end())
+		- *std::min_element(mNumbers.begin(), mNumbers.end()));
 }
