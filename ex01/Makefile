@@ -1,7 +1,7 @@
 NAME := xCast
 
 CC := c++
-CFLAG := -Wall -Wextra 
+CFLAG := -Wall -Wextra -Werror -g
 
 SRC := main.cpp \
 	Span.cpp

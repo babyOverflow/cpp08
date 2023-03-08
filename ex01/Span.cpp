@@ -37,6 +37,8 @@ void Span::addNumber(int number)
 	mNumbers.push_back(number);
 }
 
+
+
 int Span::shortestSpan() const
 {
 	if (mNumbers.size() < 2)

@@ -56,5 +56,37 @@ catch (std::exception &e)
 	std::cout << e.what() << std::endl;
 }
 
+try
+{
+	std::vector<int> v;
+	v.push_back(1);
+	v.push_back(10);
+	v.push_back(100);
+	Span sp2 = Span(100);
+	sp2.addNumbers(v.begin(), v.end());
+		std::cout << sp2.shortestSpan() << std::endl;
+	std::cout << sp2.longestSpan() << std::endl;
+}
+catch (std::exception &e)
+{
+	std::cout << e.what() << std::endl;
+}
+try
+{
+	std::vector<int> v;
+	v.push_back(1);
+	v.push_back(10);
+	v.push_back(100);
+	Span sp2 = Span(2);
+	sp2.addNumbers(v.begin(), v.end());
+		std::cout << sp2.shortestSpan() << std::endl;
+	std::cout << sp2.longestSpan() << std::endl;
+}
+catch (std::exception &e)
+{
+	std::cout << e.what() << std::endl;
+}
+
+
 return 0;
 }
