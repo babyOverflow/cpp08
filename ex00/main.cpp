@@ -13,15 +13,15 @@ int main()
 	v.push_back(3);
 	v.push_back(2);
 	v.push_back(1);
-	std::deque<int>::iterator it = easyfind(v, 4);
-	std::deque<int>::iterator itbegin = v.begin();
-	// std::deque<int>::iterator itend = v.end();
-
-	std::deque<int>::iterator itfind = std::find(v.begin(), v.end(), 2);
+	std::deque<int>::iterator it = easyfind(v, 5);
+	std::deque<int>::iterator itfind = std::find(v.begin(), v.end(), 5);
 	
-	std::cout << (int)(itfind  == it) << std::endl;
-	for (int i = 0; itbegin != it ; itbegin++)
-	{
-		std::cout << ++i << ' ';
-	}
+	std::cout << (int)(itfind  == it) << ' ' << *it << std::endl;
+
+	std::deque<int>::iterator it6 = easyfind(v, 6);
+	std::deque<int>::iterator itfind6 = std::find(v.begin(), v.end(), 6);
+	std::cout << (int)(itfind6  == it6) << ' ' << *it6 << std::endl;
+
+	std::deque<int>::iterator it7 = easyfind(v, 6);
+	std::cout << (int)(itfind6  == it7) << ' ' << *it6 << std::endl;
 }
